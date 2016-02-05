@@ -33,3 +33,16 @@ p.test //等同于[p test];
 - @property有一个弊端就是不能对setter方法传入数据进行过滤，如果需要对传入参数进行过滤，必须重写setter方法;
 - 使用`@property`时，如果只重写setter方法，会自动生成getter方法，同时会生成私有属性`_name`；如果只重写getter方法，会自动生成setter方法，同时也会生成私有属性`_name`；但如果同时重写getter/setter方法，则不再生成私有属性`_name`；
 - `readonly`修饰符修饰的property只生成getter方法，readwrite修饰符一般不使用(property默认就是readwrite)，setter=Method修饰符用于自定义setter方法方法名(很少使用)，getter=Method修饰符用于自定义getter方法方法名(经常使用)；
+---
+- 重写init方法必须按照苹果规定的格式重写，如果不按照规定会引发一些未知错误。
+```
+ - (instancetype)init
+ {
+    self = [super init];
+    if (self){
+        //初始化代码
+        ...
+    }
+    return self;
+ }
+```

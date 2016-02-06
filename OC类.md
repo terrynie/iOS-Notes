@@ -46,3 +46,4 @@ p.test //等同于[p test];
     return self;
  }
 ```
+- instancetype和id类似，都是万能指针，但是instancetype只能作为返回值类型，不能声明变量、也不能作为参数类型。

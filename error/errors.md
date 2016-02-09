@@ -1,1 +1,2 @@
 - 如果在创建实例时错误提示`Initializer element is not a compile-time constant`是因为所创建的实例不在main函数中；
+- EAC

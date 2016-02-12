@@ -34,7 +34,9 @@ p.test //等同于[p test];
 - 使用`@property`时，如果只重写setter方法，会自动生成getter方法，同时会生成私有属性`_name`；如果只重写getter方法，会自动生成setter方法，同时也会生成私有属性`_name`；但如果同时重写getter/setter方法，则不再生成私有属性`_name`；
 - `readonly`修饰符修饰的property只生成getter方法，readwrite修饰符一般不使用(property默认就是readwrite)，setter=Method修饰符用于自定义setter方法方法名(很少使用)，getter=Method修饰符用于自定义getter方法方法名(经常使用)；
 - `retain`修饰符会自动生成set方法内存管理代码；
-- `assign`不会帮我们自动生成set方法内存管理代码，仅仅生成普通set方法；
+- `assign`不会帮我们自动生成set方法内存管理代码，仅仅生成普通set方法。默认；
+- `atomic`性能低（多线程）默认；
+- `nonatomic`性能高（多线程）；
 ---
 - 重写init方法必须按照苹果规定的格式重写，如果不按照规定会引发一些未知错误。
 ```
@@ -59,6 +61,7 @@ p.test //等同于[p test];
  2. 配合类/对象调用类/对象中对应的SEL方法；
  3. 配合对象将SEL类型作为形参传入(可以用于将指定传入对象执行传入的SEL方法等...)；
 - performSelector方法最多接受两个参数；
+- `@class`有两种应用场景，第一是在头文件中使用，以降低代码拷贝频率提高编译速度；第二是放置循环引入头文件；
 
 
 

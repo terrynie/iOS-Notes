@@ -1,6 +1,3 @@
-<style type="text/css">
-b{font=""}
-</style>
 #Block
 - block也是一种数据类型；
 - block的形式类似于C语言中指向函数的指针；

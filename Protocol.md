@@ -31,3 +31,17 @@
 - 协议中区分哪些方法必须实现哪些方法可以选择实现就是靠`@required`和`@optional`修饰符来区分；
 - `@required`修饰符修饰的方法是必须实现的，`@optional`修饰符修饰的方法可以实现也可以不实现；
 - 注意：被`@required`修饰的方法即使没有被实现也不会报错，只会报一个警告；(所以，`@required`和`@optional`只是为了方便程序员之间的交流)
+
+##应用场景
+1. 如果想让某个对象必须遵守某个协议，可以将协议写在数据类型的右边：
+```
+ClassName<protocolName> *objc = [[ClassName alloc] init];
+//ClassName是数据类型，protocolName是要遵守的协议
+```
+2. 使用协议对对象进行类型限定后，并不意味着该对象一定实现了协议中的方法，所以在调用协议声明的方法前一定要进行安全性检查：
+```
+if ([objc respondsToSelector:@selector(methodName)]){ //methodName就是协议中声明的方法
+      [objc methodName];
+}
+```
+3. 

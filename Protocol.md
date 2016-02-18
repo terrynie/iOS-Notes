@@ -44,4 +44,11 @@ if ([objc respondsToSelector:@selector(methodName)]){ //methodName就是协议�
       [objc methodName];
 }
 ```
-3. 
+
+##规范
+1. 一般情况下，当前协议属于谁，我们就将协议定义到谁的头文件中；
+2. 协议的名称一般以它属于的类名开头，后面跟上protocol或者delegate；
+3. 协议中的方法名称一般以协议的名称中protocol之前的部分作为开头；
+4. 一般情况下协议中的方法会将触发该协议的对象传递进去；
+5. 一般情况下类中的代理属性命名为delegate；
+6. 当某一个类要成为另外一个类的代理时，一般在头文件中使用`@protocol 协议名`，告诉当前类这是一个协议，而在实现文件中才使用`#import`导入；

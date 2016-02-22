@@ -13,3 +13,4 @@ NSString *str3 = [NSString stringWithFormat:@"str3"]; //工厂方法创建
 - 由于`initWithString`是通过浅copy返回一个字符串对象，所以在内容相同时，多个对象指向同一个内存空间；
 
 ###字符串截取
+
